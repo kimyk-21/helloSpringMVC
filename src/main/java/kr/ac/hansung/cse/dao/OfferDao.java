@@ -14,7 +14,7 @@ import java.util.List;
 @Repository
 public class OfferDao {
 
-    private JdbcTemplate jdbcTemplate;  // psa(portable service abstraction)
+    private JdbcTemplate jdbcTemplate;  // psa(portable service abstraction) -> 서비스를 추상화
 
     @Autowired
     public void setDataSource(DataSource dataSource) {
@@ -27,7 +27,8 @@ public class OfferDao {
 
     }
 
-    //query and return a single object
+    //CRUD operation, Create Read Update Delete
+    //query and return a single object 하나 조회
     public Offer getOffer(String name) {
 
         String sqlStatement= "select * from offers where name=?";
@@ -50,7 +51,7 @@ public class OfferDao {
     }
 
     //query and return multiple objects
-    // cRud method
+    // cRud method 여러개 조회
     public List<Offer> getOffers() {
 
         String sqlStatement= "select * from offers";

@@ -11,7 +11,7 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<body> <!-- 하나씩 꺼내서 출력, core 라이브러리에 있는 out 태그 -->
     <c:forEach var="offer" items="${id_offers}" >
         <p> <c:out value="${offer}"> </c:out> </p>
     </c:forEach>

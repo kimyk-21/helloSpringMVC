@@ -17,7 +17,7 @@ public class HomeController {
 
 
     //@RequestMapping(value = "/", method = RequestMethod.GET)
-    @GetMapping("/")
+    @GetMapping("/") //간단하게
     public String home(HttpServletRequest request) {
 
         String url = request.getRequestURL().toString();
@@ -25,7 +25,7 @@ public class HomeController {
 
         logger.info("Request URL: {}, Client IP: {}", url, clientIPaddr);
 
-        return "home";
+        return "home"; //view의 home.jsp
     }
 }
 

@@ -11,7 +11,7 @@ import java.util.List;
 public class OfferService {
 
     //service -> dao
-    @Autowired
+    @Autowired //의존성주입
     private OfferDao offerDao;
 
     public List<Offer> getAllOffers() {

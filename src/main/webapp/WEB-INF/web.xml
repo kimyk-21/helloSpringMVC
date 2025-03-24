@@ -9,7 +9,7 @@
         and Filters -->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>
+        <param-value> <!-- root는 필요없으니 delete anyway 함 -->
             /WEB-INF/spring/appServlet/dao-context.xml
             /WEB-INF/spring/appServlet/service-context.xml
         </param-value>
@@ -27,7 +27,7 @@
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>/WEB-INF/spring/appServlet/servlet-context.xml</param-value>
-        </init-param>
+        </init-param> <!-- servlet은 로컬에게 사용 -->
         <load-on-startup>1</load-on-startup>
     </servlet>
 
