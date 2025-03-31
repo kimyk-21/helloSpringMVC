@@ -32,12 +32,12 @@ public class OfferController {
     @GetMapping("/createoffer")
     public String createOffer(Model model) {
         model.addAttribute("offer", new Offer());
-        return "createoffer";
+        return "createoffer"; //빈 offer
     }
 
     @PostMapping("docreate")
     public String doCreate(Model model, @Valid Offer offer, BindingResult result) {
-        //System.out.println(offer);
+        //System.out.println(offer); //offer에서 tostring했어서 출력가능함
 
         if(result.hasErrors()) {
             System.out.println("== Form data does not validated ==");
@@ -45,15 +45,15 @@ public class OfferController {
             List<ObjectError> errors = result.getAllErrors();
 
             for(ObjectError error:errors) {
-                System.out.println(error.getDefaultMessage());
-            }
+                System.out.println(error.getDefaultMessage()); //오퍼에서 정한 에러메시지 출력
+            } //얘는 이미 입력된 상태, 모델에 이미 offer 들어가있음.
 
-            return "createoffer";
+            return "createoffer"; //오퍼 내용이 반영됨
         }
 
         //Controller -> Service -> Dao
-        offerService.insertOffer(offer);
-        return "offercreated";
+        offerService.insertOffer(offer); //Service로 얘를 호출, db에 저장
+        return "offercreated"; //view로 넘김
     }
 
 }

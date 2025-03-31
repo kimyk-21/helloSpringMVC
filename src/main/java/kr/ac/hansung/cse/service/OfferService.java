@@ -20,5 +20,5 @@ public class OfferService {
 
     public void insertOffer(Offer offer) {
         offerDao.insert(offer);
-    }
+    } //db저장
 }
